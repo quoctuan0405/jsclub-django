@@ -25,6 +25,7 @@ source myvenv/Scripts/activate
 Make sure you see (myvenv).
 ## Step 4: Install the require plugin
 ```
+cd jsclub-django
 pip install -r requirements.txt
 ```
 ## Step 5: Running the server
