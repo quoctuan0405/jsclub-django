@@ -33,3 +33,15 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 ### Start developing!
+
+
+### Development Process
+I presumely that everything has been set up properly, during the development, when comes to my phase, I have installed several a package named Popper, the description for installion can already be found [here](https://github.com/namvdo/jsclub-django-1/tree/master/node_modules/%40popperjs/core), install this package manager with the commands:
+```
+# With npm
+npm i @popperjs/core
+
+# With Yarn
+yarn add @popperjs/core
+```
+
