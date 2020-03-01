@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ConfessionConfig(AppConfig):
-    name = 'confession'
+    name = 'jsclub.confession'
