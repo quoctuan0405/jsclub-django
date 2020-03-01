@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('text', models.TextField()),
                 ('pub_date', models.DateTimeField()),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('confession', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='confession.Confession')),
+                ('confession', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='jsclub.confession.Confession')),
             ],
         ),
     ]

@@ -1,9 +1,7 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
-from confession.models import Confession
+from jsclub.confession import Confession
 
 # Create your models here.
 class Comment(models.Model):

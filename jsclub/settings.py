@@ -30,10 +30,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
-    'confession.apps.ConfessionConfig',
-    'comment.apps.CommentConfig',
-    'page.apps.PageConfig',
+    'jsclub.account.apps.AccountConfig',
+    'jsclub.confession.apps.ConfessionConfig',
+    'jsclub.comment.apps.CommentConfig',
+    'jsclub.page.apps.PageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,7 +129,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'jsclub/../account/static/')
+    os.path.join(BASE_DIR, 'jsclub/../jsclub/account/static/')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
