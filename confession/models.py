@@ -7,3 +7,5 @@ class Confession(models.Model):
     body = models.TextField()
     pub_date = models.DateTimeField()
     author = models.ForeignKey(User, on_delete = models.CASCADE)
+    def __str__ (self):
+    	return self.title

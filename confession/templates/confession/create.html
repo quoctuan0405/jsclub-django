@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
+<form method="POST" action={% url 'createconfession' %}>
+{% csrf_token %}
+Title <br>
+<input type="text" name="title">
+<br>
+Body <br>
+<input type="textarea" rows="4" cols="50" name="body">
+<br>
+Anonynous <br>
+<input type="checkbox" name="anonymous">
+<br>
+<input class="btn btn-primary" type="submit" value="Submit">
+</form>
+{% endblock %}

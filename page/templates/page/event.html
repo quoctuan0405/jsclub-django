@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{%  block stylesheet %}
+<style>
+   
+.container {
+    height: auto;
+    min-height:100%;
+    margin: 0 auto;
+}
+
+.content
+{
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+}
+
+.main {
+    height: auto;
+    padding: 0px 10px;
+}
+
+
+.image1 img{
+    width: auto;
+    height: 300px;
+}
+
+.icon{
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.name {
+    color: gray;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.hashtag {
+    color: blue;
+    margin-bottom: 10px;
+}
+
+.note {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px auto;
+}
+
+.link {
+    color: green;;
+    font-size: 15px;
+}
+
+.link a {
+    margin-bottom: 5px;
+    display: block;
+}
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="content">
+        <div class="main">
+            <h1>🎊 JS - YEAR OF SUPREME 🎊</h1> <!-- Chỗ này lấy tên Event từ DB -->
+            <!-- Cái này thì lấy content -->
+            💙 Ngày 11/01/2020 vừa qua JS Club đã tổ chức thành công sự kiện tất niên Year of Supreme cho các bạn CTV và
+            thành viên CLB với những hoạt động vô cùng ý nghĩa như thi gói bánh chưng, cùng nhau quây quần bên bếp lửa,
+            tâm sự, trải lòng về những chuyện đã xảy ra trong suốt một năm vừa qua. Dường như sự bỡ ngỡ, lạ lẫm lúc ban
+            đầu của các bạn CTV đã được gỡ bỏ bởi sự nhiệt tình, thân thiện của các thành viên Gen cũ, giúp cho buổi
+            tiệc tất niên trở nên đầm ấm, gắn kết hơn.
+            <br><br>
+            💜 Ngoài ra, sự góp mặt của các tiền bối đi trước đã truyền thêm nguồn động lực vô cùng to lớn đến với những
+            người mới, những người chuẩn bị nối tiếp họ trên con đường xây dựng và phát triển JS Club trở nên chuyên
+            nghiệp và thành công hơn.
+            <br><br>
+            💗JS Club xin chúc các bạn có một năm mới thật thành công, gặp nhiều may mắn trong cuộc sống, chúc các bạn
+            CTV sẽ vượt qua vòng thử thách một cách xuất sắc để trở thành thành viên chính thức của đại gia đình JS.
+            <br><br>
+            <!-- Cái này lấy hahstag -->
+            <div class="hashtag">
+                #Year_of_Supreme
+            </div>
+            <!-- Cái là load ảnh ra nhé lưu vào Db chỉ có tên ảnh thôi lúc add thêm media/ở đầu là ok -->
+            <div class="image1">
+                <img src="{% static 'event.jpg' %}" />
+            </div>
+            <!-- Cái này lấy ngày trong DB -->
+            <div class="note">
+                Ngày bắt đầu : 01/01/2020
+            </div>
+            <div class="note">
+                Ngày kết thúc: 03/03/2020
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
