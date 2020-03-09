@@ -9,7 +9,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Account(models.Model): 
-    user = models.OneToOneField(User, on_delete="CASCADE")
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(max_length=30)
     lastname = models.CharField(max_length=30)
     phone = models.CharField(max_length=18)
