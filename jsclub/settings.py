@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'jsclub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9itsicvq4vfel',
-        'USER': 'eyawnwhvxymkit',
-        'PASSWORD': '8b25136929f4692118b0fba9e694d011ae887ef65def6c2dce6f32ca96f551f1',
-        'HOST': 'ec2-3-91-112-166.compute-1.amazonaws.com',
+        'NAME': 'd93gjq9amjokd3',
+        'USER': 'ikyinkojxawvif',
+        'PASSWORD': 'f640c9be0c6917eeafa42252c18ea75aab0cc40c15ac044f87f72ebeaa624646',
+        'HOST': 'ec2-23-20-129-146.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
