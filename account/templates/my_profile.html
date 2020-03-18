@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {%block content%}
+{% extends 'base.html' %} 
+{% block title %} Profile {% endblock %}
+{%block content%}
 <style>
     /* Need to be add more styling */
     .container {
@@ -41,6 +43,7 @@
     <p>Active Status: Offline</p>
     {% endif %}
     <button type="submit"><a href="{% url 'update_profile' %}">Update your information</a></button>
+    <button><a href="{% url 'member' %}">View all members</a></button>
 </div>
 
 

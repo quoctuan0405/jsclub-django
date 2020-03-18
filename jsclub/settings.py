@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+# import dj_database_url
+# from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +26,7 @@ SECRET_KEY = '4jl+&o7m6tf%6oc@e(v40cjx%#9eyy@1#^mg4g#tsm(bbacn81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'jseclub.herokuapp.com']
 
 
 # Application definition
@@ -39,15 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'account.apps.AccountConfig',
-    'confession.apps.ConfessionConfig',
     'comment.apps.CommentConfig',
+    'post.apps.PostConfig',
     'page.apps.PageConfig',
+    'markdown_deux',
 ]
 
 SITE_ID = 1
 
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,18 +84,26 @@ WSGI_APPLICATION = 'jsclub.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# ONLY FOR DEVELOPMENT PHASE
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd93gjq9amjokd3',
-        'USER': 'ikyinkojxawvif',
-        'PASSWORD': 'f640c9be0c6917eeafa42252c18ea75aab0cc40c15ac044f87f72ebeaa624646',
-        'HOST': 'ec2-23-20-129-146.compute-1.amazonaws.com',
+        'NAME': 'dbp4ikdg54ng13',
+        'USER': 'vklagjyldgdwlw',
+        'PASSWORD': '2d37a88c4e4f6fbe2870ddd847b9a67b892f37ca05303d2ed2d4c36696a01446',
+        'HOST': 'ec2-52-71-85-210.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
 
+'''
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -129,13 +141,14 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'view_profile'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'jsclub/static/')
-]
+# STATICFILES_DIRS = [
+# 	os.path.join(BASE_DIR, 'jsclub/static/')
+# ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

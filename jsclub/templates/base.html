@@ -2,18 +2,26 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}JS Club{% endblock %}</title>
+    <title>{% block title %}Home{% endblock %} | JS Club</title>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="{% static 'css/app.css' %}">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="https://i.ibb.co/7rTmq3J/icon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
     <style>
     body,html{
+      background-color:#f2f2f2;
       font-family: "Comfortaa", "Segoe UI";
     }
-    .content {
+    .navbar, .sticky-top, .navbar-expand-sm, .navbar-dark{
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .contents {
     min-height: calc(100vh - 70px - 7.3vh);
     margin: 0;
     width: 100%;
@@ -35,12 +43,12 @@
     {% block stylesheet %}{% endblock %}
   </head>
   
-<body style="background-color:#f2f2f2">
+<body>
   {% block body %}
   {% block topnavbar %}
   {% endblock %}
 <header>
-<nav id="navbar" class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color:#C33232; height: 7.3vh; font-family: Comfortaa">
+<nav id="navbar" class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color:#C33232; height: 7.3vh; font-family: Comfortaa"> 
     <a class="navbar-brand" href="{% url 'home' %}">JS Club</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -54,10 +62,10 @@
         <a class="nav-link" href="{% url 'homeconfession' %}">Confessions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'event' %}">Events</a>
+        <a class="nav-link" href="{% url 'homeevent' %}">Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'training' %}">Training</a>
+        <a class="nav-link" href="{% url 'hometraining' %}">Training</a>
       </li>
       </ul>
       {% if user.is_authenticated %}
@@ -82,6 +90,9 @@
       {% endif %}
     </div>
 </nav>
+<div style="min-height:7.3vh">
+  <img src="{%static 'favicon.jpg'%}" alt=" ">
+ </div>
 </header>
 
     {% block breadcrumb %}
@@ -90,7 +101,7 @@
 
     {% block hero%}
     {%endblock%}
-<div class="content">
+<div class="contents">
 
     {% block content %}
 
@@ -103,11 +114,5 @@
 
 {% endblock body %}
 
-    <script>
-        $('nav div ul li').click(function(e) {
-        $('li').removeClass('active');
-        $(this).addClass('active');
-    });
-    </script>
   </body>
 </html>
